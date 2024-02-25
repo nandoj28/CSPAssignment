@@ -6,7 +6,7 @@ class Task2Solver: # class idea used from https://www.geeksforgeeks.org/constrai
     def findValues(self, problem):
         variables = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
         domains = {var: list(range(1, 121)) for var in variables}
-        
+
         '''
         constraints would be defined here but to clean up code, I defined them in constraints.py and imported them.
         new constraints can be added to constraints.py and imported here. Altough, if variables and domains are changed, 
@@ -24,7 +24,7 @@ class Task2Solver: # class idea used from https://www.geeksforgeeks.org/constrai
         if solution:
             return solution, self.nva
         else:
-            return "No solution found for constraint given"
+            return "No solution found for constraint given", self.nva
 
     def backtrack(self, assignment, variables, domains, constraints): # backtracking function
         if len(assignment) == len(variables): # check if all variables are assigned
@@ -52,14 +52,14 @@ class Task2Solver: # class idea used from https://www.geeksforgeeks.org/constrai
                 return var
 
 solver = Task2Solver() # use the class to solve the problems.
-solution_A, nva_A = solver.findValues('A')
-print("Solution to Problem A:", solution_A)
-print("Number of Variable Assignments for A:", nva_A)
+solutionA, nvaA = solver.findValues('A')
+print("Solution to Problem A:", solutionA)
+print("Number of Variable Assignments for A:", nvaA)
 
-solution_B, nva_B = solver.findValues('B')
-print("Solution to Problem B:", solution_B)
-print("Number of Variable Assignments for B:", nva_B)
+solutionB, nvaB = solver.findValues('B')
+print("Solution to Problem B:", solutionB)
+print("Number of Variable Assignments for B:", nvaB)
 
-solution_C, nva_C = solver.findValues('C')
-print("Solution to Problem C:", solution_C)
-print("Number of Variable Assignments for C:", nva_C)
+solutionC, nvaC = solver.findValues('C')
+print("Solution to Problem C:", solutionC)
+print("Number of Variable Assignments for C:", nvaC)
